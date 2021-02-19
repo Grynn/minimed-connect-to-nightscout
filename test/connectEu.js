@@ -10,6 +10,10 @@ var _ = require('lodash'),
 
 var carelink = require('../carelink.js');
 
+if (process.env.VERBOSE) {
+  require("../logger").setVerbose(true);
+}
+
 describe('connectEu()', function() {
   var client = carelink.Client({
     username: "nstesteu",

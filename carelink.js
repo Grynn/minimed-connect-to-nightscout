@@ -51,6 +51,7 @@ var Client = exports.Client = function (options) {
     }
 
     const axiosInstance = axios.create({});
+    require("axios-debug-log").addLogger(axiosInstance, logger.log);
 
     axiosCookieJarSupport(axiosInstance);
     axiosInstance.defaults.jar = new tough.CookieJar();
